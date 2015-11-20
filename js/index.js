@@ -1,17 +1,5 @@
-	$(document).ready(function(){
+$(document).ready(function(){
 		
-/*	alert("Doc Ready First");
-	
-	
-	var date = new Date();
-	alert("time zones"+date.toTimeString());
-	var removev=date.toTimeString();
-	var v=removev.replace(/\s/g, '');
-	var zonetiming = v.substr(0,v.indexOf('G'));
-	zone=v.match(/\((.*?)\)/)[1];
-	alert("zone"+zone);*/
-	
-	
 	
     document.addEventListener("deviceready",onDeviceReady,false);     
 
@@ -23,7 +11,7 @@
 		}
 		 
 	
-	 function resolution_handling() 
+/*	 function resolution_handling() 
 	 {
 	     //first way to implement
 	     browser_width = $(window).width();
@@ -31,10 +19,11 @@
 	     //alert('browser_width'+browser_width);
 	     //alert('browser_height'+browser_height);
 	 }
-
+*/
 		function onDeviceReady() {
-			
- 		//var element = document.getElementById('deviceProperties');
+		
+			window.plugins.uniqueDeviceID.get(success, fail);
+ 		var element = document.getElementById('deviceProperties');
 		//var device_uuid = device.uuid;
        
  	var networkState = navigator.connection.type;
@@ -49,12 +38,10 @@
     else
 {
     	
-    	alert("else loop");
-		window.plugins.uniqueDeviceID.get(success, fail);
+    	
 		
 		
-}
-}		
+		
 		
 		
 		$.ajaxSetup({
@@ -92,41 +79,34 @@
 		        } 
           },
           success: function (token) {   
-
-   	var device_uuid = device.uuid;
-	var d = document.getElementById("device_uuid");
+		
+   	//var device_uuid = device.uuid;
+	//var d = document.getElementById("device_uuid");
 	var token =token;
 	var header = "X-CSRF-TOKEN";
     $(document).ajaxSend(function(e, xhr, options) {
         xhr.setRequestHeader(header, token);
     });
 	
-
+	
 		
-    		//is_device_registered(device_uuid);
+    		is_device_registered();
    
  function is_device_registered()
 {
-
 	var device_uuid = globalVariable;
 	alert("For Device Value");
 	alert(device_uuid);
-	
-
-
-
 	             $.ajax({
               url: 'http://183.82.96.212:8080/m_service/m_resources/is_device_registered',
               type: "post",
-      		  data: 'device_uuid='+device.uuid,
+      		  data: {device_uuid:device_uuid},
               dataType: "json",
               timeout: 20000,
               crossDomain: true,
               
               
 			  error: function (jqXHR, textStatus, errorThrown) {
-			  
-			  alert(jqXHR.textStatus);
 				  if(textStatus==="timeout") {
 					  bootbox.dialog({
 						  closeButton: false,
@@ -167,22 +147,24 @@
   }
 });
               },
-			                success: function (data) {
+	success: function (data) {
 							
-			                	//data.logindata[0].is_security_question_answered;
-							if(data.is_security_question_answered==1 && data.logindata[0].count>=1)
+	//data.logindata[0].is_security_question_answered;
+	if(data.is_security_question_answered==1 && data.logindata[0].count>=1)
       {
-   
+   	alert("Already Registered");
       window.location='./log-in.html';
       return false;
       }
       else if(data.is_security_question_answered==0 && data.logindata[0].count>=1)
       {
+      	alert("Enter Security question and answer");
       window.location='./portal_security_questions.html?user_id='+data.user_id;
       return false;
       }
       else
       {
+      	alert("Registration");
       window.location='./registration.html';
       return false;
       }
@@ -194,17 +176,12 @@
 }
 }
 			});
-
-    			
-				
-				
-				
-				
-				var globalVariable;			
+}
+}
+    
+    var globalVariable;			
      function success(uuid)		
-{
-	alert("Before uuid");
-	
+{		
     alert(uuid);		
    		
 		globalVariable=uuid;
@@ -214,4 +191,5 @@ function fail(uuid)
 {		
    		
     alert("failure function reg");		
-};		
+};			
+    		
