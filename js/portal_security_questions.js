@@ -22,6 +22,17 @@ function onBackKeyDown(e) {
 
     function onDeviceReady() {
     	
+		   window.plugins.uniqueDeviceID.get(success, fail);
+
+
+var device;			
+
+function success(uuid)		
+{		
+
+     device = {uuid:uuid,device_model:"",device_platform:"",device_version:""};
+ 		
+		
     document.addEventListener("backbutton", onBackKeyDown, false);
     var element = document.getElementById('deviceProperties');
 
@@ -146,6 +157,18 @@ function onBackKeyDown(e) {
 	
 
     }}
+
+	  
+};		
+
+function fail(uuid)		
+{		
+   	    alert("failure function reg");		
+	
+};	
+		
+		
+		
 		
 		}
     
