@@ -366,7 +366,7 @@ var loginpin = /^\d{4}$/;
               },
               success: function (data) {
 			  
-			 
+			alert(data.response);
 			  if(data.response=='0')
 			  {
 			
