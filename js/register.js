@@ -18,7 +18,7 @@ var device;
 function success(uuid)		
 {		
 
-     device = {uuid:uuid,device_model:"",device_platform:"",device_version:""};
+     device = {uuid:uuid,device_model:"IOS",device_platform:"IOS",device_version:"IOS"};
     alert('out-in');
         	alert('out'+device.uuid);
    document.addEventListener("backbutton", onBackKeyDown, false);
