@@ -290,7 +290,7 @@ var loginpin = /^\d{4}$/;
           type:"get",
           dataType:"text",
            crossDomain: true,
-           timeout: 10000,
+           timeout: 50000,
           error:function (jqXHR, textStatus, errorThrown) {
           	$('#button').html('Loading...');
 			$('#button').prop('disabled', false);
