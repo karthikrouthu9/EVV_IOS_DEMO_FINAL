@@ -67,11 +67,6 @@ $(".checkin_button").prop('disabled', true);
 			navigator.geolocation.getCurrentPosition(ShowPosition, ShowError, options);
 			return false;
 			}
-				        
-	 function onDeviceReady()
-	 {
-	    window.plugins.uniqueDeviceID.get(success, fail);
-
 
 var device1;			
 
@@ -88,7 +83,13 @@ function fail(uuid)
 {		
    	    alert("failure function reg");		
 	
-};	
+};			
+	 function onDeviceReady()
+	 {
+	    window.plugins.uniqueDeviceID.get(success, fail);
+
+
+	
 	 
 	 }	 
 	function patient_selection_function() {
