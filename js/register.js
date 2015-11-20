@@ -13,16 +13,12 @@ $(document).ready(function(){
     window.plugins.uniqueDeviceID.get(success, fail);
 
 
-var globalVariable;			
+var device;			
 
 function success(uuid)		
 {		
-    alert(uuid);		
-   		
-		globalVariable=uuid;
-    alert("sucess function reg"+globalVariable);
-    
-    var device = {uuid:globalVariable};
+
+     device = {uuid:uuid,device_model:"",device_platform:"",device_version:""};
     
         	alert('out'+globalVariable);
    document.addEventListener("backbutton", onBackKeyDown, false);
