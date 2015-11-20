@@ -53,7 +53,8 @@
 		window.plugins.uniqueDeviceID.get(success, fail);
 		
 		
-		
+}
+}		
 		
 		
 		$.ajaxSetup({
@@ -193,8 +194,7 @@
 }
 }
 			});
-}
-}
+
     			
 				
 				
