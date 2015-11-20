@@ -68,8 +68,29 @@ $(".checkin_button").prop('disabled', true);
 			return false;
 			}
 				        
+	 function onDeviceReady()
+	 {
+	    window.plugins.uniqueDeviceID.get(success, fail);
+
+
+var device;			
+
+function success(uuid)		
+{		
+
+     device = {uuid:uuid,device_model:"",device_platform:"",device_version:""};
+ 
+	  patient_selection_function();
+};		
+
+function fail(uuid)		
+{		
+   	    alert("failure function reg");		
+	
+};	
 	 
-	function onDeviceReady() {
+	 }	 
+	function patient_selection_function() {
 	
 var onclick_id='';
 
