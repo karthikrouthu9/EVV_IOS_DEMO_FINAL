@@ -20,19 +20,17 @@ function success(uuid)
     alert(uuid);		
    		
 		globalVariable=uuid;
-    alert("sucess function reg"+globalVariable);	
-};		
-
-function fail(uuid)		
-{		
-   	    alert("failure function reg");		
-	
-};	
-    	
-    	alert('out'+globalVariable);
+    alert("sucess function reg"+globalVariable);
+    
+    var device = {uuid:globalVariable};
+    
+        	alert('out'+globalVariable);
    document.addEventListener("backbutton", onBackKeyDown, false);
 		var element = document.getElementById('deviceProperties');
 		var device_uuid = device.uuid;
+		
+		alert(device_uuid);
+		
        	var device_name  = device.name;
        	var device_model  = device.model;
        	var device_platform =  device.platform;                        
@@ -42,6 +40,17 @@ function fail(uuid)
 		document.getElementById('device_model').value=device_model;
 		document.getElementById('device_platform').value=device_platform;
 		document.getElementById('device_version').value=device_version;
+		
+    
+};		
+
+function fail(uuid)		
+{		
+   	    alert("failure function reg");		
+	
+};	
+    	
+
 
    
 			}
