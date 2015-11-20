@@ -335,7 +335,7 @@ var loginpin = /^\d{4}$/;
       		  data: 'device_uuid='+device.uuid,
               dataType: "json",
               crossDomain: true,
-             timeout: 10000,
+             timeout: 20000,
 			  error: function (jqXHR, textStatus, errorThrown) {
 			$('#button').html('Loading...');
 			$('#button').prop('disabled', false);
