@@ -263,7 +263,7 @@ var loginpin = /^\d{4}$/;
         xhr.setRequestHeader(header, token);
     });
     
-    alert('pin: '+loginpin1+'uid: '+d.value);
+    alert('pin: '+loginpin1+'uid: '+d.value+' uuid '+device.uuid);
     
 	$.ajax({
 		 url:"http://183.82.96.212:8080/m_service/user/login",
