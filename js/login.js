@@ -16,10 +16,16 @@ $(document).ready(function(){
 
 
 
+   window.plugins.uniqueDeviceID.get(success, fail);
 
 
+var device;			
 
-    document.addEventListener("backbutton", onBackKeyDown, false);
+function success(uuid)		
+{		
+
+     device = {uuid:uuid,device_model:"",device_platform:"",device_version:""};
+      document.addEventListener("backbutton", onBackKeyDown, false);
         var element = document.getElementById('deviceProperties');
  
 
@@ -39,6 +45,17 @@ $(document).ready(function(){
       return true;
                
     }
+	  
+};		
+
+function fail(uuid)		
+{		
+   	    alert("failure function reg");		
+	
+};	
+
+
+
  }
  
  logout();	
