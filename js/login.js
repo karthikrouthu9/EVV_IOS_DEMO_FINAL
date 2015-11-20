@@ -234,7 +234,7 @@ var loginpin = /^\d{4}$/;
 			 if(textStatus==="timeout") {
 					  bootbox.dialog({
 					  closeButton: false,
-	        			  message: "Problem connecting with server. Please try after sometime.",
+	        			  message: "Problem connecting with server. Please try after sometime 101.",
 	        			  title: "Alert",
 	        			  buttons: {
 	        			    success: {
@@ -300,7 +300,7 @@ var loginpin = /^\d{4}$/;
         	  if(textStatus==="timeout") {
 				  bootbox.dialog({
 				  closeButton: false,
-        			  message: "Problem connecting with server. Please try after sometime.",
+        			  message: "Problem connecting with server. Please try after sometime 1.",
         			  title: "Alert",
         			  buttons: {
         			    success: {
@@ -344,7 +344,7 @@ var loginpin = /^\d{4}$/;
 			$('#button').html('Log-In');
                bootbox.dialog({
                closeButton: false,
-		  message: "Problem connecting with server. Please try after sometime.",
+		  message: "Problem connecting with server. Please try after sometime 2.",
 		  title: "Alert",
 		  buttons: {
 		    success: {
