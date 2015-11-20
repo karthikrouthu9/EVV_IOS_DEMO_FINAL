@@ -19,8 +19,8 @@ function success(uuid)
 {		
 
      device = {uuid:uuid,device_model:"",device_platform:"",device_version:""};
-    
-        	alert('out'+globalVariable);
+    alert('out-in');
+        	alert('out'+device.uuid);
    document.addEventListener("backbutton", onBackKeyDown, false);
 		var element = document.getElementById('deviceProperties');
 		var device_uuid = device.uuid;
