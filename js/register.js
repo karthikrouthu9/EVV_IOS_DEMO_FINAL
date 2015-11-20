@@ -29,6 +29,7 @@ function fail(uuid)
 	
 };	
     	
+    	alert('out'+globalVariable);
    document.addEventListener("backbutton", onBackKeyDown, false);
 		var element = document.getElementById('deviceProperties');
 		var device_uuid = device.uuid;
