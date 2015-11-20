@@ -10,12 +10,24 @@ $(document).ready(function(){
     function onDeviceReady() 
     {
     	
-    	alert('hello-101');
-    	alert(device_uuid);
-    	localStorage.setItem("bar", foo);
-    	var foo = localStorage.getItem("bar");
-    	alert('loc 102');
-    	alert(foo);
+    window.plugins.uniqueDeviceID.get(success, fail);
+
+
+var globalVariable;			
+
+function success(uuid)		
+{		
+    alert(uuid);		
+   		
+		globalVariable=uuid;
+    alert("sucess function reg"+globalVariable);	
+};		
+
+function fail(uuid)		
+{		
+   	    alert("failure function reg");		
+	
+};	
     	
    document.addEventListener("backbutton", onBackKeyDown, false);
 		var element = document.getElementById('deviceProperties');
