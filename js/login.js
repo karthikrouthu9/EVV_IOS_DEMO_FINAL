@@ -327,6 +327,8 @@ var loginpin = /^\d{4}$/;
     $(document).ajaxSend(function(e, xhr, options) {
         xhr.setRequestHeader(header, token);
     });
+    
+    alert(device.uuid+' diviceuuid');
 	
             $.ajax({
               url: 'http://183.82.96.212:8080/m_service/m_resources/evv_enabled_login',
