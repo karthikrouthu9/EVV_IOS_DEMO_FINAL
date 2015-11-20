@@ -9,6 +9,14 @@ $(document).ready(function(){
    
     function onDeviceReady() 
     {
+    	
+    	alert('hello-101');
+    	alert(device_uuid);
+    	localStorage.setItem("bar", foo);
+    	var foo = localStorage.getItem("bar");
+    	alert('loc 102');
+    	alert(foo);
+    	
    document.addEventListener("backbutton", onBackKeyDown, false);
 		var element = document.getElementById('deviceProperties');
 		var device_uuid = device.uuid;
