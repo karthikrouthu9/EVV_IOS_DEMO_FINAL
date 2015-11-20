@@ -342,7 +342,7 @@ var loginpin = /^\d{4}$/;
 			$('#button').html('Loading...');
 			$('#button').prop('disabled', false);
 			 $('#registrationcode1').prop('disabled', false);
-	
+	alert(jqXHR.statusText);
 			$('#button').html('Log-In');
                bootbox.dialog({
                closeButton: false,
